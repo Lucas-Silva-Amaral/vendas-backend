@@ -17,9 +17,35 @@ module.exports = {
   },
   ignorePatterns: ['.eslintrc.js'],
   rules: {
-    '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        semi: false,
+        singleQuote: true,
+        arrowParens: 'avoid',
+        trailingComma: 'none',
+        endOfLine: 'auto',
+      },
+    ],
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always',
+      },
+    ],
+    'no-useless-constructor': ['off'],
+    'sort-imports': 'off',
+    'import/order': 'off',
+    '@typescript-eslint/no-explicit-any': ['off'],
   },
-};
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
+    react: {
+      version: 'detect',
+    },
+  },
+}
